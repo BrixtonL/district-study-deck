@@ -1,0 +1,10 @@
+import { readdir, readFile, writeFile } from 'node:fs/promises';
+import path from 'node:path';
+import { zipSync } from 'fflate';
+const source = path.resolve(process.argv[2] || '..');
+const target = path.resolve(process.argv[3] || path.join(source, 'District_Study_Deck_Fictional_Private.zip'));
+if (target.startsWith(path.resolve('public') + path.sep) || target.startsWith(path.resolve('dist') + path.sep)) throw new Error('Keep private ZIPs outside public/ and dist/.');
+const files = { 'District_Study_Deck.xlsx': new Uint8Array(await readFile(path.join(source, 'District_Study_Deck.xlsx'))) };
+for (const name of await readdir(path.join(source, 'photos'))) if (/\.jpe?g$/i.test(name)) files[`photos/${name}`] = new Uint8Array(await readFile(path.join(source, 'photos', name)));
+await writeFile(target, zipSync(files));
+console.log(`Private import ZIP saved to ${target}. Do not publish this file.`);
