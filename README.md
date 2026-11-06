@@ -1,5 +1,7 @@
 # District Study Deck 0.1
 
+Live app: [District Study Deck](https://brixtonl.github.io/district-study-deck/) · [Source repository](https://github.com/BrixtonL/district-study-deck)
+
 A React / TypeScript PWA for studying four fictional people. No account, backend, analytics, external API, cloud storage, or synchronization. The public app starts empty. Import a private ZIP separately on each device.
 
 ## Launch and test on Linux Mint with Chrome
@@ -101,7 +103,7 @@ node scripts/create-private-pack.mjs "C:\path\to\unpacked-pack" "C:\path\to\priv
 
 ## GitHub Pages deployment
 
-For the numbered account-creation, clean upload, deployment verification, iPhone installation, and future-update walkthrough, use [Publish to GitHub Pages](DEPLOY_GITHUB_PAGES.md). The clean upload folder can be refreshed with `pnpm prepare:github`. Deployment is not complete until the live site is verified.
+For the numbered account-creation, clean upload, deployment verification, iPhone installation, and future-update walkthrough, use [Publish to GitHub Pages](DEPLOY_GITHUB_PAGES.md). The clean upload folder can be refreshed with `pnpm prepare:github`. The current deployment has been verified in Chrome; complete the guide’s iPhone installation and Airplane Mode check on your device.
 
 Deploy **only the contents of the `district-study-deck` application folder** as the repository root. Keep the workbook, `photos` folder, and private ZIP outside that repository. This folder's `.gitignore` also excludes spreadsheets, ZIPs, and JPGs.
 
@@ -109,7 +111,7 @@ Deploy **only the contents of the `district-study-deck` application folder** as 
 2. In the repository, go to **Settings → Pages → Build and deployment → Source → GitHub Actions**.
 3. Push the source to the `main` branch (or run **Actions → Deploy application shell to GitHub Pages → Run workflow**).
 4. The included workflow installs locked dependencies, runs unit tests, configures Pages, builds, runs the deployment privacy check, and uploads **only `dist/`**. It derives the correct base path from `actions/configure-pages`, including repository subpaths and custom domains.
-5. Once the deployment succeeds, use the HTTPS URL shown by GitHub's deployment. No repository or live URL was created as part of this local build.
+5. Once the deployment succeeds, use the HTTPS URL shown by GitHub's deployment. The repository is [BrixtonL/district-study-deck](https://github.com/BrixtonL/district-study-deck); the live app is [https://brixtonl.github.io/district-study-deck/](https://brixtonl.github.io/district-study-deck/). GitHub deployment and the live Chrome offline suite were verified on November 6, 2026.
 
 For a manual repository-subpath build in PowerShell:
 

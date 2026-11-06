@@ -1,6 +1,8 @@
 # Publish District Study Deck to GitHub Pages
 
-The application is prepared for GitHub Pages. **It is not deployed until GitHub reports success and the live HTTPS site has been checked.** The connected GitHub account is **BrixtonL**. The intended repository is **BrixtonL/district-study-deck**; no website URL is verified yet.
+**Deployed and verified:** [https://brixtonl.github.io/district-study-deck/](https://brixtonl.github.io/district-study-deck/)
+
+**Repository:** [BrixtonL/district-study-deck](https://github.com/BrixtonL/district-study-deck). GitHub’s build and deploy jobs succeeded, and the live Chrome offline/import/quiz suite passed on November 6, 2026. Steps 1–5 below document the setup already completed for this account. Your next manual step is **section 6: install on your iPhone**. Physical iPhone offline verification remains to be performed on your device.
 
 ## 1. Create your GitHub account — you do this
 
@@ -50,7 +52,7 @@ The app URL, icons, manifest identity/start URL, worker scope, and offline navig
 ## 5. Verify the live site — do this with your assistant before calling deployment complete
 
 1. After the green deployment, open **Settings → Pages → Visit site**, or use the URL in the deployment job.
-2. The expected address format is `https://YOUR-USERNAME.github.io/district-study-deck/`. This is a template, not a verified live URL.
+2. The expected address format is `https://YOUR-USERNAME.github.io/district-study-deck/`. For this account, the verified URL is https://brixtonl.github.io/district-study-deck/.
 3. Open the address in Chrome. Confirm the app starts empty, loads without missing assets, and reaches **Ready for offline**.
 4. Share the repository URL and exact website URL with your assistant. The assistant can check the live HTTPS response, manifest, icons, worker scope, and import/quiz behavior in a fresh browser context, then switch that context offline and reload. No successful live verification is claimed until those checks pass.
 5. A real iPhone installation and Airplane Mode check still require your device. Complete the next section even if automated Chrome tests pass.
